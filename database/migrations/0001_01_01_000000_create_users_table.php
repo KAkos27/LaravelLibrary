@@ -37,6 +37,11 @@ return new class extends Migration
             "name" => "asd",
             "email" => "asd3@asd.com",
         ]);
+
+        User::create([
+            "name" => "git clone után",
+            "email" => "asd213@asd.com",
+        ]);
     }
 
     /**
