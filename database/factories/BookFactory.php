@@ -18,7 +18,7 @@ class BookFactory extends Factory
     {
         return [
             'author' => fake("hu_HU")->name(),
-            'title' => fake()->title(),
+            'title' => fake("hu_HU")->sentence(rand(1, 5)),
             'pieces' => fake()->randomNumber(),
         ];
     }

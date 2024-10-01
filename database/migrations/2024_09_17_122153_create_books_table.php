@@ -16,7 +16,7 @@ return new class extends Migration
             $table->id("book_id");
             $table->string("author");
             $table->string("title");
-            $table->integer("pieces");
+            $table->integer("pieces")->default(1);
             $table->timestamps();
         });
 

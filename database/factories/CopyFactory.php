@@ -3,7 +3,6 @@
 namespace Database\Factories;
 
 use App\Models\Book;
-use App\Models\User;
 use Illuminate\Database\Eloquent\Factories\Factory;
 
 /**
@@ -20,7 +19,9 @@ class CopyFactory extends Factory
     {
         return [
             'book_id' => Book::all()->random()->book_id,
-            'user_id' => User::all()->random()->id,
+            'hardcovered' => rand(0, 1),
+            'publication' => rand(1950, 2024),
+            'status' => rand(0, 2)
         ];
     }
 }

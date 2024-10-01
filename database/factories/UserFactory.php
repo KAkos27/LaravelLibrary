@@ -26,6 +26,7 @@ class UserFactory extends Factory
         return [
             'name' => fake("hu_HU")->name(),
             'email' => fake()->unique()->safeEmail(),
+            'permission' => rand(0, 2),
         ];
     }
 
