@@ -3,6 +3,7 @@
 use App\Models\User;
 use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
+use Illuminate\Support\Facades\Hash;
 use Illuminate\Support\Facades\Schema;
 
 return new class extends Migration
@@ -16,33 +17,22 @@ return new class extends Migration
             $table->id();
             $table->string('name');
             $table->string('email')->unique();
-            $table->boolean("permission")->default(1);
+            $table->string('password');
+            $table->boolean("role")->default(1);
             $table->timestamps();
         });
 
         User::create([
-            "name" => "asd",
+            "name" => "admin",
             "email" => "asd@asd.com",
+            "password" => Hash::make("admin1234"),
+            "role" => 0
         ]);
 
         User::create([
-            "name" => "asd",
+            "name" => "user",
             "email" => "asd1@asd.com",
-        ]);
-
-        User::create([
-            "name" => "asd",
-            "email" => "asd2@asd.com",
-        ]);
-
-        User::create([
-            "name" => "asd",
-            "email" => "asd3@asd.com",
-        ]);
-
-        User::create([
-            "name" => "git clone után",
-            "email" => "asd213@asd.com",
+            "password" => Hash::make("user1234"),
         ]);
     }
 
